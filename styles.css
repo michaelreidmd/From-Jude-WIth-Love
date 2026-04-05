@@ -1,0 +1,398 @@
+:root {
+  --bg: #f5ede2;
+  --paper: rgba(255, 252, 247, 0.78);
+  --paper-solid: #fffaf4;
+  --ink: #201715;
+  --muted: #6f6155;
+  --warm: #a4512b;
+  --warm-deep: #6d3b20;
+  --sage: #7e9c72;
+  --cream: #f4d7b7;
+  --border: rgba(32, 23, 21, 0.1);
+  --shadow: 0 24px 60px rgba(88, 56, 31, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top, rgba(158, 98, 47, 0.22), transparent 34%),
+    linear-gradient(180deg, #f8f1e8 0%, #f5ede2 60%, #f3e7d8 100%);
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+body::before {
+  width: 16rem;
+  height: 16rem;
+  left: -5rem;
+  top: 8rem;
+  background: rgba(199, 119, 69, 0.22);
+}
+
+body::after {
+  width: 20rem;
+  height: 20rem;
+  right: -6rem;
+  top: 12rem;
+  background: rgba(126, 156, 114, 0.2);
+}
+
+.page-shell {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 2rem 0 4rem;
+}
+
+.eyebrow,
+.label {
+  display: inline-block;
+  margin: 0 0 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.eyebrow {
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.hero h1,
+.hero h2,
+.offerings h3,
+.about h2,
+.signup h2 {
+  font-family: "Cormorant Garamond", serif;
+  margin: 0;
+}
+
+.hero h1 {
+  font-size: clamp(4rem, 8vw, 6.5rem);
+  line-height: 0.9;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--warm);
+}
+
+.intro,
+.philosophy-box p,
+.about-copy p,
+.about-card p,
+.signup > p {
+  color: var(--muted);
+  line-height: 1.85;
+  font-size: 1.08rem;
+}
+
+.hero-actions,
+.signup-form {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0.95rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  font-weight: 700;
+  transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-dark {
+  color: #fff;
+  background: #171210;
+}
+
+.button-light {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.82);
+  border-color: var(--border);
+}
+
+.button-accent {
+  color: var(--ink);
+  background: var(--cream);
+}
+
+.hero-notes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.hero-notes div,
+.offerings article,
+.philosophy-box {
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: var(--paper);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 40px rgba(91, 60, 33, 0.08);
+}
+
+.hero-notes div {
+  padding: 1rem;
+  border-radius: 1.2rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.hero-card {
+  position: relative;
+  padding: 1.35rem;
+  border-radius: 2rem;
+  background: rgba(248, 243, 236, 0.95);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 1rem -1rem -1rem 1rem;
+  background: rgba(217, 178, 143, 0.42);
+  border-radius: 2rem;
+  z-index: -1;
+}
+
+.feature-panel {
+  border-radius: 1.5rem;
+  padding: 2rem;
+  color: #fff7ef;
+  background: linear-gradient(180deg, #d8a06f 0%, #b66337 42%, #6d3b20 100%);
+}
+
+.feature-panel p,
+.feature-panel .label,
+.feature-panel span {
+  color: rgba(255, 247, 239, 0.8);
+}
+
+.feature-panel h2 {
+  font-size: clamp(2.4rem, 5vw, 3.3rem);
+  line-height: 0.95;
+  margin: 0.5rem 0 1rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+}
+
+.stats div {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.stats span,
+.stats strong {
+  display: block;
+}
+
+.stats strong {
+  margin-top: 0.25rem;
+  color: #fff;
+}
+
+.philosophy-box {
+  margin-top: 1rem;
+  border-radius: 1.4rem;
+  padding: 1.6rem;
+  background: #fff;
+}
+
+.label.dark {
+  color: #7e7065;
+}
+
+.offerings {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.3rem;
+  margin: 0 0 4.5rem;
+}
+
+.offerings article {
+  padding: 1.7rem;
+  border-radius: 1.6rem;
+  border-color: rgba(32, 23, 21, 0.08);
+}
+
+.offerings h3 {
+  font-size: 2rem;
+  margin-bottom: 0.65rem;
+}
+
+.offerings p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.about-card {
+  padding: 2rem;
+  border-radius: 2rem;
+  color: #fff5ec;
+  background: #8f4b2b;
+  box-shadow: 0 24px 60px rgba(90, 46, 22, 0.22);
+}
+
+.about-card p,
+.about-card .label {
+  color: rgba(255, 245, 236, 0.82);
+}
+
+.about-card h2 {
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  line-height: 0.98;
+  margin-bottom: 1rem;
+}
+
+.about-copy p {
+  font-size: 1.25rem;
+  line-height: 1.9;
+}
+
+.signup {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-radius: 2.2rem;
+  color: #fff8f2;
+  background: linear-gradient(135deg, #201716 0%, #33211c 45%, #704127 100%);
+  box-shadow: 0 30px 70px rgba(34, 20, 16, 0.28);
+}
+
+.signup .label,
+.signup p {
+  color: rgba(255, 248, 242, 0.76);
+}
+
+.signup h2 {
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  margin-bottom: 0.5rem;
+}
+
+.signup-form {
+  justify-content: center;
+}
+
+.signup-form input {
+  width: min(460px, 100%);
+  min-height: 54px;
+  padding: 0.95rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font: inherit;
+}
+
+.signup-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.signup-form input:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: 2px;
+}
+
+@media (max-width: 920px) {
+  .hero,
+  .about,
+  .offerings,
+  .hero-notes {
+    grid-template-columns: 1fr;
+  }
+
+  .page-shell {
+    width: min(1120px, calc(100% - 1.25rem));
+  }
+
+  .hero {
+    padding-top: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding-top: 1rem;
+  }
+
+  .hero-card,
+  .about-card,
+  .signup,
+  .offerings article {
+    border-radius: 1.5rem;
+  }
+
+  .feature-panel {
+    padding: 1.5rem;
+  }
+
+  .hero-actions,
+  .signup-form {
+    flex-direction: column;
+  }
+
+  .button,
+  .signup-form input {
+    width: 100%;
+  }
+}
