@@ -1,7 +1,6 @@
 :root {
   --bg: #f6f1ea;
   --surface: rgba(255, 251, 246, 0.82);
-  --surface-solid: #fffaf5;
   --ink: #1e1a17;
   --muted: #645a52;
   --line: rgba(30, 26, 23, 0.1);
@@ -50,9 +49,9 @@ img {
 }
 
 .hero,
+.profile-section,
 .photo-feature,
 .split-section,
-.about,
 .gallery-strip {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -61,7 +60,7 @@ img {
 }
 
 .hero {
-  padding: 24px 0 56px;
+  padding: 24px 0 48px;
 }
 
 .eyebrow,
@@ -76,13 +75,13 @@ img {
 
 .eyebrow,
 .hero-meta span,
-.offerings article,
 .section-copy,
 .gallery-copy,
 .hero-card,
 .feature-copy,
 .gallery-text-panel,
-.gallery-card-note {
+.profile-copy,
+.offerings article {
   border: 1px solid var(--line);
   background: var(--surface);
   backdrop-filter: blur(12px);
@@ -96,8 +95,7 @@ img {
 
 h1,
 h2,
-h3,
-blockquote {
+h3 {
   margin: 0;
   font-family: "Newsreader", serif;
   font-weight: 600;
@@ -121,16 +119,14 @@ h3 {
 }
 
 .intro,
+.profile-copy p,
 .section-copy p,
-.about-copy p,
-.about-card p,
 .signup > p,
 .hero-card p,
 .offerings article p,
 .gallery-copy p,
 .feature-copy p,
-.gallery-text-panel p,
-figcaption {
+.gallery-text-panel p {
   color: var(--muted);
   line-height: 1.8;
   font-size: 1.04rem;
@@ -139,6 +135,8 @@ figcaption {
 .hero-actions,
 .signup-form,
 .hero-meta,
+.loaf-gallery-tiles,
+.profile-facts,
 .offerings {
   display: flex;
   gap: 14px;
@@ -146,12 +144,14 @@ figcaption {
 
 .hero-actions,
 .hero-meta,
-.signup-form {
+.signup-form,
+.profile-facts {
   flex-wrap: wrap;
 }
 
 .hero-actions,
-.hero-meta {
+.hero-meta,
+.profile-facts {
   margin-top: 28px;
 }
 
@@ -188,11 +188,14 @@ figcaption {
   color: var(--ink);
 }
 
-.hero-meta span {
+.hero-meta span,
+.profile-facts span {
   padding: 11px 14px;
   border-radius: 999px;
   color: var(--muted);
   font-size: 0.92rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .hero-visual {
@@ -200,6 +203,7 @@ figcaption {
 }
 
 .hero-photo-frame,
+.profile-photo,
 .section-photo img,
 .gallery-grid img,
 .photo-frame {
@@ -207,6 +211,7 @@ figcaption {
 }
 
 .hero-photo-frame,
+.profile-photo,
 .photo-frame {
   position: relative;
   overflow: hidden;
@@ -215,6 +220,7 @@ figcaption {
 }
 
 .hero-photo-frame img,
+.profile-photo img,
 .photo-frame img,
 .section-photo img,
 .gallery-grid img {
@@ -223,7 +229,11 @@ figcaption {
 }
 
 .hero-photo-frame {
-  min-height: 580px;
+  min-height: 420px;
+}
+
+.profile-photo {
+  min-height: 420px;
 }
 
 .photo-frame::after {
@@ -232,14 +242,15 @@ figcaption {
   inset: 0;
   display: none;
   align-items: end;
-  padding: 22px;
+  padding: 18px;
   color: rgba(30, 26, 23, 0.75);
-  font-size: 0.96rem;
+  font-size: 0.92rem;
   line-height: 1.6;
-  background: linear-gradient(180deg, rgba(255, 250, 245, 0.3) 0%, rgba(246, 241, 234, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(255, 250, 245, 0.28) 0%, rgba(246, 241, 234, 0.94) 100%);
 }
 
-.photo-frame.is-missing::after {
+.photo-frame.is-missing::after,
+.profile-photo.is-missing::after {
   display: flex;
 }
 
@@ -252,78 +263,49 @@ figcaption {
   border-radius: 24px;
 }
 
-.photo-feature {
-  margin-bottom: 72px;
+.profile-section {
+  margin: 0 0 56px;
 }
 
+.profile-copy,
 .feature-copy,
 .section-copy,
 .gallery-copy,
-.offerings article,
 .gallery-text-panel,
-.gallery-card-note {
+.offerings article {
   padding: 28px;
   border-radius: 28px;
 }
 
-.loaf-gallery {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  grid-template-areas:
-    "large top"
-    "large note";
-  gap: 18px;
-  align-items: stretch;
+.photo-feature-middle {
+  margin: 56px 0;
+  align-items: start;
 }
 
-.gallery-card {
+.loaf-gallery-tiles {
+  align-items: flex-start;
+}
+
+.tile-card {
+  flex: 1;
   margin: 0;
 }
 
-.gallery-card-large {
-  grid-area: large;
+.tile-photo {
+  min-height: 220px;
 }
 
-.gallery-card-top {
-  grid-area: top;
-}
-
-.gallery-card-note {
-  grid-area: note;
-  display: flex;
-  align-items: center;
-}
-
-.gallery-card .photo-frame {
-  min-height: 100%;
-}
-
-.gallery-card-large .photo-frame {
-  min-height: 580px;
-}
-
-.gallery-card-top .photo-frame {
-  min-height: 280px;
-}
-
-figcaption {
-  margin-top: 12px;
-  font-size: 0.95rem;
-}
-
-blockquote {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  line-height: 1.15;
-  color: var(--warm-deep);
+.split-section-story {
+  margin-bottom: 56px;
 }
 
 .section-photo img {
-  min-height: 420px;
+  min-height: 360px;
   border-radius: 28px;
 }
 
 .offerings {
-  margin: 32px 0 72px;
+  margin: 24px 0 64px;
 }
 
 .offerings article {
@@ -335,7 +317,7 @@ blockquote {
 }
 
 .gallery-strip {
-  margin-bottom: 72px;
+  margin-bottom: 64px;
 }
 
 .gallery-grid {
@@ -358,33 +340,6 @@ blockquote {
   align-items: center;
 }
 
-.about {
-  margin-bottom: 72px;
-}
-
-.about-card {
-  padding: 34px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #8d4b2c 0%, #b66a3f 100%);
-  color: #fff7f1;
-  box-shadow: 0 22px 58px rgba(116, 63, 33, 0.2);
-}
-
-.about-card p,
-.about-card .label,
-.signup .label,
-.signup p {
-  color: rgba(255, 247, 241, 0.84);
-}
-
-.label.light {
-  color: rgba(255, 247, 241, 0.84);
-}
-
-.about-copy p {
-  font-size: 1.2rem;
-}
-
 .signup {
   padding: 42px 28px;
   text-align: center;
@@ -395,6 +350,11 @@ blockquote {
 
 .signup h2 {
   color: #fff8f4;
+}
+
+.signup .label,
+.signup p {
+  color: rgba(255, 247, 241, 0.84);
 }
 
 .signup-form {
@@ -424,31 +384,25 @@ blockquote {
 
 @media (max-width: 940px) {
   .hero,
+  .profile-section,
   .photo-feature,
   .split-section,
-  .about,
   .gallery-strip,
   .offerings,
   .gallery-grid {
     grid-template-columns: 1fr;
   }
 
-  .offerings {
+  .offerings,
+  .loaf-gallery-tiles {
     display: grid;
-  }
-
-  .loaf-gallery {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "large"
-      "top"
-      "note";
   }
 
   .hero-photo-frame,
-  .gallery-card-large .photo-frame,
+  .profile-photo,
   .section-photo img {
-    min-height: 420px;
+    min-height: 360px;
   }
 }
 
@@ -459,7 +413,7 @@ blockquote {
   }
 
   .hero {
-    padding-bottom: 40px;
+    padding-bottom: 36px;
   }
 
   h1 {
@@ -467,15 +421,15 @@ blockquote {
   }
 
   .hero-card,
+  .profile-copy,
   .feature-copy,
   .section-copy,
   .gallery-copy,
   .offerings article,
   .gallery-text-panel,
-  .gallery-card-note,
-  .about-card,
   .signup,
   .hero-photo-frame,
+  .profile-photo,
   .photo-frame,
   .section-photo img,
   .gallery-grid img {
@@ -488,9 +442,9 @@ blockquote {
   }
 
   .hero-photo-frame,
-  .gallery-card-large .photo-frame,
-  .gallery-card-top .photo-frame {
-    min-height: 320px;
+  .profile-photo,
+  .tile-photo {
+    min-height: 240px;
   }
 
   .button,

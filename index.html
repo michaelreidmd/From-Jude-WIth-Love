@@ -39,7 +39,7 @@
         </div>
 
         <div class="hero-visual">
-          <div class="hero-photo-frame photo-frame hero-photo" data-fallback="Jude's signature loaf">
+          <div class="hero-photo-frame photo-frame" data-fallback="Jude's signature loaf">
             <img
               src="photos/jude-loaf-1.jpg"
               alt="A close-up of Jude's sourdough loaf with decorative scoring"
@@ -58,50 +58,41 @@
       </header>
 
       <main>
-        <section class="photo-feature" id="loaves" aria-label="Jude's Sourdough Gallery">
-          <div class="feature-copy">
-            <p class="label">Jude's loaves</p>
-            <h2>The bread itself should do the talking</h2>
-            <p>
-              These breads carry the personality of the bake: deep colour, bold
-              ears, flour-dusted crusts, and the quiet confidence of something made
-              by hand and made often.
-            </p>
+        <section class="profile-section" id="story">
+          <div class="profile-photo-wrap">
+            <div class="profile-photo photo-frame" data-fallback="Add Jude portrait to photos/jude-profile.jpg">
+              <img
+                src="photos/jude-profile.jpg"
+                alt="Portrait of Jude outdoors in the countryside"
+                onerror="this.parentElement.classList.add('is-missing'); this.remove();"
+              />
+            </div>
           </div>
 
-          <div class="loaf-gallery">
-            <figure class="gallery-card gallery-card-large">
-              <div class="photo-frame" data-fallback="Place first loaf photo here">
-                <img
-                  src="photos/jude-loaf-2.jpg"
-                  alt="Several freshly baked sourdough loaves cooling on racks"
-                  onerror="this.parentElement.classList.add('is-missing'); this.remove();"
-                />
-              </div>
-              <figcaption>Fresh from the oven, cooling in batches.</figcaption>
-            </figure>
-
-            <figure class="gallery-card gallery-card-top">
-              <div class="photo-frame" data-fallback="Place second loaf photo here">
-                <img
-                  src="photos/jude-loaf-3.jpg"
-                  alt="Two seeded sourdough loaves on cooling racks"
-                  onerror="this.parentElement.classList.add('is-missing'); this.remove();"
-                />
-              </div>
-              <figcaption>Seeded loaves with a darker, rustic finish.</figcaption>
-            </figure>
-
-            <figure class="gallery-card gallery-card-note">
-              <blockquote>
-                Bread should not feel factory-made. It should feel remembered,
-                shared, and unmistakably from someone's kitchen.
-              </blockquote>
-            </figure>
+          <div class="profile-copy">
+            <p class="label">About Jude</p>
+            <h2>A baker shaped by care, discipline, and home</h2>
+            <p>
+              Jude is a mother of three, a trained midwife, a regular 5K runner,
+              and proudly Home Counties born. What began as a quiet kitchen ritual
+              during Covid grew into a way of feeding neighbours, teaching others,
+              and making something deeply real by hand.
+            </p>
+            <p>
+              Her baking carries the same qualities that run through the rest of
+              her life: steadiness, warmth, attention to detail, and a real love
+              of nourishing people well.
+            </p>
+            <div class="profile-facts">
+              <span>Mother of three</span>
+              <span>Trained midwife</span>
+              <span>5K athlete</span>
+              <span>Home Counties born</span>
+            </div>
           </div>
         </section>
 
-        <section class="split-section" id="story">
+        <section class="split-section split-section-story">
           <div class="section-copy">
             <p class="label">A slower rhythm</p>
             <h2>Bread that feels personal</h2>
@@ -116,6 +107,49 @@
               src="https://images.unsplash.com/photo-1745944727205-a533f696403f?auto=format&fit=crop&fm=jpg&q=80&w=1600"
               alt="Countryside scenery near Reigate with open sky and green landscape"
             />
+          </div>
+        </section>
+
+        <section class="photo-feature photo-feature-middle" id="loaves" aria-label="Jude's Sourdough Gallery">
+          <div class="feature-copy">
+            <p class="label">Jude's loaves</p>
+            <h2>The middle of the page belongs to the bread</h2>
+            <p>
+              A compact gallery of crust, scoring, colour, and shape. Simple,
+              elegant, and right at the heart of the page.
+            </p>
+          </div>
+
+          <div class="loaf-gallery loaf-gallery-tiles">
+            <figure class="gallery-card tile-card">
+              <div class="photo-frame tile-photo" data-fallback="Add first loaf image to photos/jude-loaf-1.jpg">
+                <img
+                  src="photos/jude-loaf-1.jpg"
+                  alt="A close-up of Jude's sourdough loaf with decorative scoring"
+                  onerror="this.parentElement.classList.add('is-missing'); this.remove();"
+                />
+              </div>
+            </figure>
+
+            <figure class="gallery-card tile-card">
+              <div class="photo-frame tile-photo" data-fallback="Add second loaf image to photos/jude-loaf-2.jpg">
+                <img
+                  src="photos/jude-loaf-2.jpg"
+                  alt="Several freshly baked sourdough loaves cooling on racks"
+                  onerror="this.parentElement.classList.add('is-missing'); this.remove();"
+                />
+              </div>
+            </figure>
+
+            <figure class="gallery-card tile-card">
+              <div class="photo-frame tile-photo" data-fallback="Add third loaf image to photos/jude-loaf-3.jpg">
+                <img
+                  src="photos/jude-loaf-3.jpg"
+                  alt="Two seeded sourdough loaves on cooling racks"
+                  onerror="this.parentElement.classList.add('is-missing'); this.remove();"
+                />
+              </div>
+            </figure>
           </div>
         </section>
 
@@ -172,25 +206,6 @@
                 </p>
               </div>
             </figure>
-          </div>
-        </section>
-
-        <section class="about">
-          <div class="about-card">
-            <p class="label light">About Jude</p>
-            <h2>A quiet kitchen ritual turned outward</h2>
-            <p>
-              What began during Covid as a steady personal practice grew into a
-              way of feeding neighbours, teaching others, and making something
-              honest enough to gather around.
-            </p>
-          </div>
-          <div class="about-copy">
-            <p>
-              Jude now bakes dozens of loaves each week and teaches others the
-              craft with the same intention: make something real, do it carefully,
-              and share it generously.
-            </p>
           </div>
         </section>
 
