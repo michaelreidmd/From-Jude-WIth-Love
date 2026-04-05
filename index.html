@@ -11,119 +11,199 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="site-bg"></div>
     <div class="page-shell">
       <header class="hero">
         <div class="hero-copy">
           <p class="eyebrow">Reigate sourdough studio</p>
-          <h1>
-            From Jude
-            <span>With Love</span>
-          </h1>
+          <h1>From Jude With Love</h1>
           <p class="intro">
-            Handmade sourdough, thoughtful classes, and a slower way of feeding
-            people. Every loaf is shaped by hand and baked to be shared.
+            Handmade sourdough, simple classes, and slow baking for local tables.
+            One loaf at a time, made to feel generous and real.
           </p>
           <div class="hero-actions">
-            <a href="#signup" class="button button-dark">Order This Week's Loaves</a>
-            <a href="#classes" class="button button-light">Join a Bread Class</a>
+            <a href="#signup" class="button button-dark">Join the bake list</a>
+            <a href="#loaves" class="button button-light">See the loaves</a>
           </div>
-          <div class="hero-notes">
-            <div>Naturally leavened and slow-fermented</div>
-            <div>Shaped, scored, and baked by hand</div>
-            <div>Made in Reigate for local collection</div>
+          <div class="hero-meta">
+            <span>Slow-fermented</span>
+            <span>Hand-shaped</span>
+            <span>Made in Reigate</span>
           </div>
         </div>
 
-        <div class="hero-card">
-          <div class="feature-panel">
-            <p class="label">This week's bake</p>
-            <h2>Slow-fermented country loaf</h2>
-            <p>
-              A crackling crust, deep caramel colour, and the kind of crumb that
-              disappears quickly once the butter is out.
-            </p>
-            <div class="stats">
-              <div>
-                <span>Ferment</span>
-                <strong>24 hours</strong>
-              </div>
-              <div>
-                <span>Pickup</span>
-                <strong>Friday mornings</strong>
-              </div>
-            </div>
+        <div class="hero-visual">
+          <div class="hero-photo-frame photo-frame hero-photo" data-fallback="Jude's signature loaf">
+            <img
+              src="photos/jude-loaf-1.jpg"
+              alt="A close-up of Jude's sourdough loaf with decorative scoring"
+              onerror="this.parentElement.classList.add('is-missing'); this.remove();"
+            />
           </div>
-
-          <div class="philosophy-box">
-            <p class="label dark">Philosophy</p>
+          <div class="hero-card">
+            <p class="label">This week's bake</p>
+            <h2>Country sourdough</h2>
             <p>
-              Bread should not be rushed. It should not be uniform. It should
-              feel like it came from someone's hands, not a line.
+              Crackling crust, open crumb, and a long slow ferment for depth,
+              character, and a loaf worth sharing.
             </p>
           </div>
         </div>
       </header>
 
       <main>
+        <section class="photo-feature" id="loaves" aria-label="Jude's Sourdough Gallery">
+          <div class="feature-copy">
+            <p class="label">Jude's loaves</p>
+            <h2>The bread itself should do the talking</h2>
+            <p>
+              These breads carry the personality of the bake: deep colour, bold
+              ears, flour-dusted crusts, and the quiet confidence of something made
+              by hand and made often.
+            </p>
+          </div>
+
+          <div class="loaf-gallery">
+            <figure class="gallery-card gallery-card-large">
+              <div class="photo-frame" data-fallback="Place first loaf photo here">
+                <img
+                  src="photos/jude-loaf-2.jpg"
+                  alt="Several freshly baked sourdough loaves cooling on racks"
+                  onerror="this.parentElement.classList.add('is-missing'); this.remove();"
+                />
+              </div>
+              <figcaption>Fresh from the oven, cooling in batches.</figcaption>
+            </figure>
+
+            <figure class="gallery-card gallery-card-top">
+              <div class="photo-frame" data-fallback="Place second loaf photo here">
+                <img
+                  src="photos/jude-loaf-3.jpg"
+                  alt="Two seeded sourdough loaves on cooling racks"
+                  onerror="this.parentElement.classList.add('is-missing'); this.remove();"
+                />
+              </div>
+              <figcaption>Seeded loaves with a darker, rustic finish.</figcaption>
+            </figure>
+
+            <figure class="gallery-card gallery-card-note">
+              <blockquote>
+                Bread should not feel factory-made. It should feel remembered,
+                shared, and unmistakably from someone's kitchen.
+              </blockquote>
+            </figure>
+          </div>
+        </section>
+
+        <section class="split-section" id="story">
+          <div class="section-copy">
+            <p class="label">A slower rhythm</p>
+            <h2>Bread that feels personal</h2>
+            <p>
+              Bread should not be rushed, over-designed, or made to feel generic.
+              Every loaf here is shaped by hand, fermented slowly, and baked with
+              a quiet kind of care.
+            </p>
+          </div>
+          <div class="section-photo scenic">
+            <img
+              src="https://images.unsplash.com/photo-1745944727205-a533f696403f?auto=format&fit=crop&fm=jpg&q=80&w=1600"
+              alt="Countryside scenery near Reigate with open sky and green landscape"
+            />
+          </div>
+        </section>
+
         <section class="offerings" aria-label="Offerings">
           <article>
-            <h3>Fresh Sourdough</h3>
+            <p class="mini-label">Fresh loaves</p>
+            <h3>Weekly sourdough</h3>
             <p>
-              Small-batch weekly bakes with crisp crusts, open crumb, and a
-              schedule you can count on.
-            </p>
-          </article>
-          <article id="classes">
-            <h3>Classes</h3>
-            <p>
-              Hands-on sourdough workshops in a relaxed home setting for curious
-              beginners and returning bakers.
+              Small-batch bakes for local collection, with a focus on flavour,
+              texture, and consistency.
             </p>
           </article>
           <article>
-            <h3>Bake List</h3>
+            <p class="mini-label">Learn at home</p>
+            <h3>Classes</h3>
             <p>
-              Join the weekly note for upcoming bread drops, class dates, and
-              the occasional kitchen story.
+              Calm, hands-on sourdough sessions for beginners and home bakers who
+              want a more confident routine.
+            </p>
+          </article>
+          <article>
+            <p class="mini-label">Stay close</p>
+            <h3>Community</h3>
+            <p>
+              Join the list for bread drops, class dates, and the occasional note
+              from the kitchen.
             </p>
           </article>
         </section>
 
+        <section class="gallery-strip" aria-label="Gallery">
+          <div class="gallery-copy">
+            <p class="label">From loaf to landscape</p>
+            <h2>Grounded in place, made by hand</h2>
+            <p>
+              From flour-dusted mornings to nearby green spaces, the whole project
+              is rooted in local pace, local people, and simple pleasures.
+            </p>
+          </div>
+          <div class="gallery-grid">
+            <figure>
+              <img
+                src="https://images.unsplash.com/photo-1768225325141-add96b898a92?auto=format&fit=crop&fm=jpg&q=80&w=1600"
+                alt="Green countryside scenery with rolling hills and light"
+              />
+            </figure>
+            <figure class="gallery-text-panel">
+              <div>
+                <p class="mini-label">Reigate mornings</p>
+                <h3>Simple food, local rhythm</h3>
+                <p>
+                  The bread belongs to a slower kind of day: neighbourly pickups,
+                  warm kitchens, and tables that fill up naturally.
+                </p>
+              </div>
+            </figure>
+          </div>
+        </section>
+
         <section class="about">
           <div class="about-card">
-            <p class="label">About Jude</p>
-            <h2>A kitchen ritual turned outward</h2>
+            <p class="label light">About Jude</p>
+            <h2>A quiet kitchen ritual turned outward</h2>
             <p>
-              What began during Covid as a quiet, steady practice grew into a
-              weekly rhythm of feeding neighbours, teaching friends, and making
-              something worth gathering around.
+              What began during Covid as a steady personal practice grew into a
+              way of feeding neighbours, teaching others, and making something
+              honest enough to gather around.
             </p>
           </div>
           <div class="about-copy">
             <p>
               Jude now bakes dozens of loaves each week and teaches others the
-              craft of sourdough with the same guiding idea: make something
-              real, make it carefully, and share it generously.
+              craft with the same intention: make something real, do it carefully,
+              and share it generously.
             </p>
           </div>
         </section>
 
         <section class="signup" id="signup">
-          <p class="label">Weekly bread drops</p>
+          <p class="label light">Weekly bread drops</p>
           <h2>Join the bake list</h2>
           <p>
-            Be first to hear about fresh loaves, class openings, and what is
+            Be first to hear about fresh loaves, upcoming classes, and what is
             coming out of the oven next.
           </p>
           <form class="signup-form">
             <input type="email" placeholder="Your email address" />
-            <button type="submit" class="button button-accent">Sign Up</button>
+            <button type="submit" class="button button-accent">Sign up</button>
           </form>
         </section>
       </main>
